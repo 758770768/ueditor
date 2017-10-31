@@ -5,15 +5,31 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="${pageContext.request.contextPath}/Ueditor/ueditor.config.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/Ueditor/ueditor.all.js"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/ueditor/ueditor.config.js"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/ueditor/ueditor.all.js"></script>
 </head>
 <body>
-	<div style="width: 100%">
-		<script type="text/javascript" id="editor" type="text/plain">
-			
-		</script>
-	</div>
+	<script type="text/javascript">
+		function abc() {
+			alert(UE.getEditor("editor").getContent());
+			return true;
+		}
+	</script>
+
+	<form action="Servlet01" onsubmit="return abc()">
+
+
+		    <div style="width: 100%">
+			<script type="text/javascript" id="editor" type="text/plain">
+				
+		     	</script>
+		    </div>
+		<input type="submit" value="gooo"/>
+	</form>
+
+
 	<script type="text/javascript">
 		var ue = UE.getEditor('editor', {
 
@@ -27,6 +43,5 @@
 
 		});
 	</script>
-
 </body>
 </html>
